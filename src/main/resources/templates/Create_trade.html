@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Trade Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Trade Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/trade}">Trade Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Create New Trade </h1>
+				<div class = "card-body">
+					<form th:action="@{/trade}" th:object = "${trade}" method="POST">
+						<div class ="form-group">
+							<label> Trade Id </label>
+							<input
+							type = "text"
+							name = "TradeId"
+							th:field = "*{TradeId}"
+							class = "form-control"
+							placeholder="Enter TradeId" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Version </label>
+							<input
+							type = "text"
+							name = "Version"
+							th:field = "*{Version}"
+							class = "form-control"
+							placeholder="Enter Version" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Counter party id </label>
+							<input
+							type = "text"
+							name = "counter-party Id"
+							th:field = "*{CounterPartyId}"
+							class = "form-control"
+							placeholder="Enter CounterPartyId" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> BookId </label>
+							<input
+							type = "text"
+							name = "BookId"
+							th:field = "*{BookId}"
+							class = "form-control"
+							placeholder="Enter BookId" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Maturity Date </label>
+							<input
+							type = "text"
+							name = "Version"
+							th:field = "*{MatuarityDate}"
+							class = "form-control"
+							placeholder="Enter Maturity Date (YYYY-MM-DD)" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Created Date </label>
+							<input
+							type = "text"
+							name = "Version"
+							th:field = "*{CreatedDate}"
+							class = "form-control"
+							placeholder="Enter Created Date (YYYY-MM-DD)" 
+							/>
+						</div>
+						
+						
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
