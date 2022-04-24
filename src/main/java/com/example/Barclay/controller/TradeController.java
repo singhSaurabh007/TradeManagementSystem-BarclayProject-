@@ -56,7 +56,7 @@ public class TradeController {
 	}
 	
 	@PostMapping("/trade")
-	public String saveStudent(@ModelAttribute("trade") Trade trade ,RedirectAttributes ra) {
+	public String saveTrade(@ModelAttribute("trade") Trade trade ,RedirectAttributes ra) {
 		
 		tradeService.saveTrade(trade);
 		if(tradeServiceImpl.checkv==1)
@@ -67,7 +67,7 @@ public class TradeController {
 	}
 	
 	@GetMapping("/trade/{id}")
-	public String deleteStudent(@PathVariable String id) {
+	public String deleteTrade(@PathVariable String id) {
 		tradeService.deleteTradeById(id);
 		return "redirect:/trade";
 	}
